@@ -5,7 +5,7 @@ const carrinho = [
     '{ "nome": "Caneta", "preco": 7.50}'
 ];
 
-// Retornar um array apenas com os preços
+// Retornar um novo array apenas com os preços
 
 const paraObjeto = json => JSON.parse(json);
 const apenasPreco = produto => produto.preco;
