@@ -8,3 +8,8 @@ aprovados.forEach(nome => console.log(nome));
 
 const exibirAprovados = aprovado => console.log(aprovado);
 aprovados.forEach(exibirAprovados);
+
+
+aprovados.forEach((el, i) => {
+    console.log(i+1, el);
+})
