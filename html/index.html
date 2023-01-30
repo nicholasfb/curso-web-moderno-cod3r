@@ -21,6 +21,7 @@
         <a href="exercicios/texto2.html">02 - Texto 2</a> |
         <a href="exercicios/listas.html">03 - Listas</a> |
         <a href="exercicios/listaAninhada.html">04 - Lista Aninhada</a> |
+        <a href="exercicios/links.html">05 - Links</a> |
     </nav>
     <section id="conteudo">
         
@@ -35,7 +36,7 @@
             link.onclick = function(event) {
                 event.preventDefault();
                 
-                fetch("exercicios/listaAninhada.html")
+                fetch(link.href)
                     .then(resposta => resposta.text())
                     .then(text => {
                         conteudo.innerHTML = text;
