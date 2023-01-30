@@ -7,12 +7,17 @@
     <link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
     <title>Lista Aninhada</title>
     <style>
-        summary {
-            list-style-type: none;
+        .accordion {
+            cursor: pointer;
+            border: none;
+            outline: none;
+            transition: 0.4s;
+            background-color: #fff;
         }
 
-        sumary::webkit-details-marker {
+        .panel {
             display: none;
+            overflow:hidden;
         }
     </style>
 </head>
@@ -20,41 +25,48 @@
     <h1>Projeto</h1>
     <ul class="tree">
         <li>
-            backend
+            <span wm-folder>backend</span>
             <ul>
                 <li>
-                    <details>
-                    <summary>app</summary>
-                    <ul>
-                        <li>produto.js</li>
-                        <li>usuario.js</li>
-                        <li>venda.js</li>
-                    </ul>
-                    </details>
+                    <span wm-folder>app</span>
+                        <ul>
+                            <li>produto.js</li>
+                            <li>usuario.js</li>
+                            <li>venda.js</li>
+                        </ul>
                 </li>
                 <li>
-                    config
-                    <ul>
-                        <li>banco.js</li>
-                        <li>rotas.js</li>
-                        <li>servidor.js</li>
-                    </ul>
+                    <span wm-folder>config</span>
+                        <ul>
+                            <li>banco.js</li>
+                            <li>rotas.js</li>
+                            <li>servidor.js</li>
+                        </ul>
                 </li>
             </ul>
         </li>
         <li>
-            frontend
+            <span wm-folder>frontend</span>
             <ul>
                 <li>
-                    public
-                    <ul>
-                        <li>app.css</li>
-                        <li>app.js</li>
-                        <li>index.html</li>
-                    </ul>
+                    <span wm-folder>public</span>
+                        <ul>
+                            <li>app.css</li>
+                            <li>app.js</li>
+                            <li>index.html</li>
+                        </ul>
                 </li>
             </ul>
         </li>
     </ul>
+    <script>
+        document.querySelectorAll('[wm-folder]').forEach(folder => {
+            folder.onclick = function(e) {
+                const ul = folder.nextElementSibling;
+                const d = ul.style.display;
+                ul.style.display = d === 'none' ? 'block' : 'none';
+            }
+        })
+    </script>
 </body>
 </html>

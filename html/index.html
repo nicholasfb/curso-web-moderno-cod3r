@@ -31,12 +31,17 @@
     <script>
         document.querySelectorAll('a').forEach(link => {
             const conteudo = document.getElementById('conteudo');
+            const script = document.createElement('script');
             link.onclick = function(event) {
                 event.preventDefault();
                 
-                fetch(link.href)
+                fetch("exercicios/listaAninhada.html")
                     .then(resposta => resposta.text())
-                    .then(html => conteudo.innerHTML = html)
+                    .then(text => {
+                        conteudo.innerHTML = text;
+                        script.innerHTML = text;
+                        document.body.appendChild(script);
+                    })
             }
         })
     </script>
