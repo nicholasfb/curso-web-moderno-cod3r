@@ -2,17 +2,14 @@
  Repositório para as atividades, aulas e projetos realizados durante o curso Web Moderno pela Cod3r
 
 # Tabela de Conteúdos
-======================
 
-<!-- ts -->
-    * [Fundamentos]
-    * [Estruturas de Controle]
-    * [Função]
-    * [Objeto]
-    * [Array]
-    * [HTML]
-    * [Exercícios]
-<!-- te -->
+ - [Fundamentos](https://github.com/nicholasfb/curso-web-moderno-cod3r/tree/main/fundamentos)
+ - [Estruturas de Controle](https://github.com/nicholasfb/curso-web-moderno-cod3r/tree/main/estruturaDeControle)
+ - [Função](https://github.com/nicholasfb/curso-web-moderno-cod3r/tree/main/funcoes)
+ - [Objetos](https://github.com/nicholasfb/curso-web-moderno-cod3r/tree/main/objetos)
+ - [Array](https://github.com/nicholasfb/curso-web-moderno-cod3r/tree/main/arrays)
+ - [HTML](https://github.com/nicholasfb/curso-web-moderno-cod3r/tree/main/html)
+ - [Exercícios](https://github.com/nicholasfb/curso-web-moderno-cod3r/tree/main/exercicios)
 
 
 ### Pré-requisitos
