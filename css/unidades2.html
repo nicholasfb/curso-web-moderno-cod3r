@@ -8,12 +8,25 @@
             position: relative;
             background-color: orange;
             width: 400px;
+            height: 400px;
+            padding: 50px;
+        }
+
+        .dentro {
+            background-color: mediumvioletred;
+            height: 100px; 
+            width: 100%;
+            position: static; /* conteudo */
+            position: relative; /* conteudo */
+            position: absolute; /* conteudo + padding */
+            position: fixed; /* viewport */
+            /* position: sticky; */
         }
     </style>
 </head>
 <body>
     <div class="fora">
-        <div class="dentro">a</div>
+        <div class="dentro"></div>
     </div>
 </body>
 </html>
