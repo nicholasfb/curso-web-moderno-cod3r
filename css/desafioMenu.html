@@ -12,46 +12,104 @@
             padding: 0;
             box-sizing: border-box;
         }
+
+        body {
+            font-family: 'Oswald', sans-serif;
+        }
+
+        header {
+            position: relative;
+        }
+
         .cabecalho {
             background-color: darkslategray;
             box-shadow: 3px 4px 1px lightskyblue;
-            display: inline;
+            min-height: 75px;
+        }
+
+        .logo {
+            display: inline-block;
+            height: 80px;
+            padding: 15px;
         }
 
         .logo a img{
-            width: 250px;
+            height: 100%;
         }
 
-        .menu ul{
-            display: inline;
+        .menu {
+            display: inline-block;
+            vertical-align: top;
+            height: 80px;
+            padding: 25px;
+           
+        }
+        .menu ul li{
+            display: inline-block;
         }
 
         .menu ul li a{
-            font-family: 'Oswald';
             font-weight: 400;
-            color: #fff;
+            color: #eee;
             text-decoration: none;
-            padding: .250rem;
+            font-size: 1.3rem;
+            padding: 15px;
         }
 
-        .menu ul li a:hover {
+        .menu a:hover,
+        .menu a.selected {
             background-color: lightskyblue;
         }
         
         .menu-toggle {
-            display: none;
+            float: right;
+            color: #eee;
+            background-color: #555;
+            border: solid 1px #777;
+            border-radius: 5px;
+            height: 40px;
+            padding: 10px 20px;
+            margin: 20px 15px;
         }
 
-        .autenticacao a{
-            font-family: 'Oswald';
+        .autenticacao{
+            float: right;
+            height: 80px;
+            padding: 30px;
+        }
+
+        .autenticacao a {
             text-decoration: none;
-            color: #fff;
+            color: #eee;
         }
 
         .botao {
+            border-radius: 30px;
+            padding: 10px 25px;
+            margin: 10px;
+        }
+
+        .destaque {
             background-color: red;
-            padding: .5rem;
-            border-radius: 36px;
+            color: #fff;
+        }
+
+        @media (min-width: 679px) {
+            .menu-toggle {
+                display: none;
+            }
+        }
+
+        @media (max-width: 680px) {
+            .menu {
+                display: none;
+            }
+        }
+
+        @media(max-width: 910px) {
+            .autenticacao {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -89,7 +147,15 @@
     </header>
 
     <script>
-        // ...
+        window.onhashchange = function(e) {
+            const oldURL = e.oldURL.split('#')[1]
+            const newURL = e.newURL.split('#')[1]
+            console.log(oldURL, newURL);
+            const oldMenu = document.querySelector(`.menu a[href='#${oldURL}']`);
+            const newMenu = document.querySelector(`.menu a[href='#${newURL}']`);
+            oldMenu && oldMenu.classList.remove('selected');
+            newMenu && newMenu.classList.add('selected');
+        }   
     </script>
 </body>
 
